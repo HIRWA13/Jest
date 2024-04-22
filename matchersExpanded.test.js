@@ -10,3 +10,14 @@ test('there is pool in Liverpool', () => {
     expect('Liverpool').toMatch(/pool/)
 })
 
+const multiply = require('./product')
+
+describe('test using numberMatchers', ()=> {
+    test('number matchers', () => {
+        expect(multiply(2, 3)).toBe(6)
+        expect(multiply(2, 3)).toBeGreaterThan(5)
+        expect(multiply(2, 3)).toBeLessThan(7)
+        expect(multiply(2, 3)).toBeGreaterThanOrEqual(6)
+        expect(multiply(2, 3)).toBeLessThanOrEqual(6)
+    })
+})
