@@ -4,7 +4,7 @@
  * String matchers: toMatch, etc
  * number matchers: toBeGreaterThan, toBeLessThan, toBeGreaterThanOrEqual, toBeLessThanOrEqual
  * Truthyness matchers: test whether something true or truthry, null, defined, undefined, false
- * 
+ * Array and toContain matcher: toContain matcher
  */
 
 test('there is pool in Liverpool', () => {
@@ -31,4 +31,14 @@ test('test truthyness matchers', () => {
     expect(n).not.toBeUndefined()
     expect(n).not.toBeTruthy()
     expect(n).toBeFalsy()
+})
+
+const carStock = [
+    'BMW',
+    'Ferarii',
+    'Toyota',
+]
+
+test('test if Toyota is in carStock', () => {
+    expect(carStock).toContain('Toyota')
 })
