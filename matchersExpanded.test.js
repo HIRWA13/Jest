@@ -3,7 +3,8 @@
 /**
  * String matchers: toMatch, etc
  * number matchers: toBeGreaterThan, toBeLessThan, toBeGreaterThanOrEqual, toBeLessThanOrEqual
- * Truthyness matchers: 
+ * Truthyness matchers: test whether something true or truthry, null, defined, undefined, false
+ * 
  */
 
 test('there is pool in Liverpool', () => {
@@ -20,4 +21,14 @@ describe('test using numberMatchers', ()=> {
         expect(multiply(2, 3)).toBeGreaterThanOrEqual(6)
         expect(multiply(2, 3)).toBeLessThanOrEqual(6)
     })
+})
+
+test('test truthyness matchers', () => {
+    const n = null;
+    
+    expect(n).toBeNull()
+    expect(n).toBeDefined()
+    expect(n).not.toBeUndefined()
+    expect(n).not.toBeTruthy()
+    expect(n).toBeFalsy()
 })
